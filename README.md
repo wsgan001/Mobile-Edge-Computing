@@ -5,6 +5,8 @@
 
 ## …or create a new repository on the command line
 ```
+echo "# Mobile-Edge-Computing" >> README.md
+git init
 git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/qpointwang/Mobile-Edge-Computing.git

@@ -78,3 +78,11 @@ LPA是一类对驾驶员和乘客不太重要的应用程序。 例如，语音�
 ![image](https://github.com/qpointwang/Mobile-Edge-Computing/blob/master/AVE-Autonomous-Vehicular-Edge-Computing/NAI.png)
 
 这里，“idle”意味着邻居的资源管理器不使用它管理的可用资源处理任何作业。k指定邻居的跳数。因为根据现有研究，通过超过2跳的中继的通信是不稳定的，所以在NAI计算和进一步调度中忽略超过2跳的节点。φ是表示随着跳数增加而资源可用性衰落的因素。这里的“衰落”指的是随着跳数的增加，传输开销和失去连接的概率增加，这导致卸载的收益减少。在我们的模拟场景中测试，φ= 0.8是合适的，但是最合适的值可能在不同的实际情况中不同。
+
+为了在需要时计算NAI，AVE在每辆车上建立一个NAI表以存储所需信息。表中的条目的格式为<车辆ID，空闲状态，跳数，到期时间>，并且当达到其到期时间时，将自动删除条目。更新此表的过程将在第IV节中进一步讨论。
+
+### WORKFLOW
+
+![image](https://github.com/qpointwang/Mobile-Edge-Computing/blob/master/AVE-Autonomous-Vehicular-Edge-Computing/fig3.png)
+
+AVE框架的工作流程由两部分组成：主动定期信标和主动流程(active periodic beaconing and proactive flows)。 流程表示处理作业从到达到返回结果的过程。在这个框架中，我们将流程划分为四个主要阶段：作业缓存，发现，调度和数据传输，如图3所示。信息的细节和流程的阶段在本节的其余部分进行了解释。

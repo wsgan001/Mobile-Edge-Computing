@@ -54,3 +54,9 @@ LPA是一类对驾驶员和乘客不太重要的应用程序。 例如，语音�
 ![image](https://github.com/qpointwang/Mobile-Edge-Computing/blob/master/AVE-Autonomous-Vehicular-Edge-Computing/fig1.png)
 
 ### SYSTEM OVERVIEW
+#### A. Roles of Nodes
+我们将参与框架的每辆车称为节点。每个作业由一个节点生成并由一个节点处理。这两个节点可以是相同的;即，生成作业的节点也可以处理该作业。在这种情况下，我们说该作业是在本地处理的。 如果生成作业的节点无法直接到达有助于处理作业的节点，则需要其他节点来帮助在它们之间转发数据。 为方便起见，本文分别将这三种类型的节点称为请求者，处理器和转发器。请注意，此分类不是永久性的，仅适用于特定作业。车辆可以是一个作业的处理器，同时也是另一个作业的请求者，它没有足够的处理能力。
+
+#### B. Architecture of Proposed Framework
+与其他客户端-服务器体系结构一样，此框架中的软件包括客户端应用程序和相应的服务器端应用程序，称为应用程序模块和后端模块，如图2所示。应用程序在本机操作系统上运行，管理其优先级和可用资源;后端在VM中运行，由AVE框架管理。我们引入一个管理器模块（在图2中突出显示）作为中间件来收集来自其他两个模块的信息，作业和结果，并进行卸载和作业分配决策。
+![image](https://github.com/qpointwang/Mobile-Edge-Computing/blob/master/AVE-Autonomous-Vehicular-Edge-Computing/fig2.png)

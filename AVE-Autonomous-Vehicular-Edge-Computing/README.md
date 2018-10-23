@@ -139,3 +139,9 @@ AVE框架使用beacon消息来帮助车辆获取有关附近可用资源的信�
 在接收到一个作业的所有数据后，处理器将该作业添加到其处理队列的末尾。排队的作业逐个处理。对于每个作业，资源管理模块将相应的后端带入其托管VM以供执行，然后等待，直到后端完成当前作业。在执行期间，后端可以利用受管VM的承诺资源。
 
 作业过程完成后，结果将发送回请求者。由于我们在本文中没有关注ad hoc路由，因此我们在实现中使用传统的路由协议称为ad hoc按需距离矢量(AODV)路由。请注意，AODV不是唯一的选择，其他单播协议，例如可预测的广播计算(PBR)在这里也是可行的。此外，如果两个车辆之间的路由路径可用（例如，由其他车载网络应用程序建立），我们可以直接利用该路径。
+
+### V. SCHEDULING ALGORITHM
+在本节中，解释了需要其他节点帮助的每个节点的基于ACO的调度算法。 AVE是一个分散的平台，每个节点根据提出的调度算法单独为自己的作业做出调度决策。
+
+#### A. Problem Formulation
+![image](https://github.com/qpointwang/Mobile-Edge-Computing/blob/master/AVE-Autonomous-Vehicular-Edge-Computing/table2.png)
